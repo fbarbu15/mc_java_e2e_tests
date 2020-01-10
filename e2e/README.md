@@ -14,7 +14,7 @@
 * "mvn clean test" starts the tests on Chrome by default
 * added test logging to: /tests/Application.log
 
-###HTML REPORTS:
+### HTML REPORTS:
 
 * You need to install allure to generate the html reports: https://docs.qameta.io/allure/#_windows
 * Make sure that e2e\allure-results is emtpy before running the tests
@@ -22,7 +22,7 @@
 * This will start a web server with the allure report
 * See a sample on how allure looks: /tests/src/test/resources/TestPlan/allure_sample.png
 
-###MULTI-BROWSER SUPPORT:
+### MULTI-BROWSER SUPPORT:
 
 Just run the test like this depending on what browser you need:
 
@@ -32,13 +32,13 @@ Just run the test like this depending on what browser you need:
 
 (On IE the budget app doesn't work on my machine) 
 
-###Cucumber
+### Cucumber
 
 * IMO Cucumber increases complexity and ads some constrains without adding that much value. Here's a good article on this: https://www.jackkinsella.ie/articles/why-bother-with-cucumber-testing
 * At the highest level (/tests/src/test/java/tests/BudgetPageTests.java) I've designed the test in gherkin language and I think this is enough in most of the cases
 * Instead of cucumber I added docker for a Bonus Point :)
 
-###DOCKER (Run test suite on multiple browsers in parallel):
+### DOCKER (Run test suite on multiple browsers in parallel):
 
 * Change testNG runner in pom.xml to <suiteXmlFile>src/test/resources/runner/testngGrid.xml</suiteXmlFile>
 * If docker is not running: "docker-machine start default"
@@ -48,7 +48,7 @@ Just run the test like this depending on what browser you need:
 * I didn't manage to connect to localhost:8000 from inside the containers (probably a NW config that I'm missing) so I had to use the url: https://budget.modus.app/budget
 * Run the tests normally: mvn clean test
 
-###CI-JOB:
+### CI-JOB:
 
 If this was a real project I would've added a CI pipeline using Jenkins or Gitlab that has: 
  * a job that builds and starts the app
