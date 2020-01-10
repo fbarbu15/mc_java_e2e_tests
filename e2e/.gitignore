@@ -1,0 +1,14 @@
+HEAD
+config
+description
+info/
+hooks/
+allure-results/
+/target/
+test-output/
+src/test/resources/.DS_Store
+*.log
+.classpath
+.project
+.settings/
+

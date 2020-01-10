@@ -1,0 +1,31 @@
+# To execute this docker-compose yml file use `docker-compose -f <file_name> up`
+# Add the `-d` flag at the end for detached execution
+version: '2'
+services:
+   firefox:
+      image: selenium/node-firefox-debug
+      privileged: true
+      volumes:
+      - /dev/shm:/dev/shm
+      depends_on:
+      - hub
+      environment:
+         HUB_HOST: hub
+         NODE_MAX_INSTANCES: 3
+         NODE_MAX_SESSION: 3
+   chrome:
+      image: selenium/node-chrome-debug
+      privileged: true
+      volumes:
+      - /dev/shm:/dev/shm
+      depends_on:
+      - hub
+      environment:
+         HUB_HOST: hub
+         NODE_MAX_INSTANCES: 3
+         NODE_MAX_SESSION: 3
+   hub:
+      image: selenium/hub
+      privileged: true
+      ports:
+      - 4444:4444

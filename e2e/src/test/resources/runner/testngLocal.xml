@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local Test" verbose="3">
+	<listeners>
+		<listener class-name="listeners.Listeners"></listener>
+	</listeners>
+	<test name="Test Local">
+		<parameter name="browser" value="local"></parameter>
+		<classes>
+			<class name="tests.BudgetPageTests">
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->

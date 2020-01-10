@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Grid Docker Test" verbose="3" parallel="tests"
+	thread-count="10">
+	<listeners>
+		<listener class-name="listeners.Listeners"></listener>
+	</listeners>
+	<test name="Test Firefox">
+		<parameter name="browser" value="firefox_docker"></parameter>
+		<classes>
+			<class name="tests.BudgetPageTests">
+			</class>
+		</classes>
+	</test>
+	<test name="Test Chrome">
+		<parameter name="browser" value="chrome_docker"></parameter>
+		<classes>
+			<class name="tests.BudgetPageTests">
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Suite -->
